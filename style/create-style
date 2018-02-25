@@ -1,0 +1,4 @@
+cd /opt/styles
+python /opt/generate_config.py ./layers.yml
+/opt/magnacarto/magnacarto -mml power.mml > power.xml
+

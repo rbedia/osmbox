@@ -1,0 +1,9 @@
+data_dir=/home/dcat/mappy/data/styles
+mkdir -p $data_dir
+sudo /usr/bin/docker run \
+	-e POSTGRES_USER=powerpy \
+	-e POSTGRES_PASSWORD=randomword \
+	-e POSTGRES_DB=powerpy \
+	-v ${data_dir}:/opt/styles \
+	mappy-style:latest
+

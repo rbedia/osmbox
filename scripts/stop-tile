@@ -1,0 +1,3 @@
+sudo /usr/bin/docker stop mappy_tile
+sudo /usr/bin/docker rm mappy_tile
+
