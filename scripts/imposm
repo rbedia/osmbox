@@ -1,10 +1,11 @@
+data_dir=/home/dcat/osmbox/data
 sudo /usr/bin/docker run \
     --link mappy_db:db \
 	-e POSTGRESQL_USER=powerpy \
 	-e POSTGRESQL_PASSWORD=randomword \
 	-e POSTGRESQL_DATABASE=powerpy \
 	-e POSTGRESQL_ADMIN_PASSWORD=randomword \
-    -v /home/dcat/mappy/data/imposm-config:/etc/imposm \
-    -v /home/dcat/mappy/data/source:/var/osm \
+    -v $data_dir/imposm-config:/etc/imposm \
+    -v $data_dir/source:/var/osm \
 	mappy-imposm:latest $@
 

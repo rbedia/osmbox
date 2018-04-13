@@ -1,4 +1,4 @@
-data_dir=/home/dcat/mappy/data/styles
+data_dir=/home/dcat/osmbox/data/styles
 mkdir -p $data_dir
 sudo /usr/bin/docker run \
 	-e POSTGRES_USER=powerpy \
