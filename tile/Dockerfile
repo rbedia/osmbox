@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:16.04
 
 ENV SUPERVISOR_VERSION=3.2.0-2 \
     MAPNIK_VERSION=3.0.9+ds-1 \

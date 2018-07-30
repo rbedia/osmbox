@@ -2,6 +2,8 @@ FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y \
     curl \
+    osmctools \
+    unzip \
  && rm -rf /var/lib/apt/lists/*
 
 RUN curl -L -o /tmp/imposm3.tar.gz https://imposm.org/static/rel/imposm3-0.4.0dev-20170519-3f00374-linux-x86-64.tar.gz && \

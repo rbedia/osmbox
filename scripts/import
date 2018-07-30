@@ -6,5 +6,5 @@ sudo /usr/bin/docker run \
 	-e POSTGRESQL_DATABASE=powerpy \
     -v $data_dir/imposm-config:/etc/imposm \
     -v $data_dir/source:/var/osm \
-	osmbox-imposm:latest $@
+	osmbox-import:latest $@
 

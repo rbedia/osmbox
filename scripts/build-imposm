@@ -1,1 +1,1 @@
-sudo /usr/bin/docker build -t mappy-imposm:latest imposm
+sudo /usr/bin/docker build -t osmbox-imposm:latest imposm

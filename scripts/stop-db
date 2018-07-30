@@ -1,3 +1,3 @@
-sudo /usr/bin/docker stop mappy_db
-sudo /usr/bin/docker rm mappy_db
+sudo /usr/bin/docker stop osmbox_db
+sudo /usr/bin/docker rm osmbox_db
 

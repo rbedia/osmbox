@@ -1,11 +1,7 @@
-data_dir=/home/dcat/mappy/data/db
-mkdir -p $data_dir
-sudo setfacl -m u:26:-wx ${data_dir}
-sudo /usr/bin/docker run -d --name mappy_db \
+sudo /usr/bin/docker run -d --name osmbox_db \
 	-e POSTGRES_USER=powerpy \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
-	-p 5433:5432 \
-	-v ${data_dir}:/var/lib/postgresql/data:Z \
-	mappy-db:latest
+	--mount source=osmbox-db,target=/var/lib/postgresql/data \
+	osmbox-db:latest
 

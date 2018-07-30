@@ -1,1 +1,1 @@
-sudo /usr/bin/docker build -t mappy-osmtile:latest tile
+sudo /usr/bin/docker build -t osmbox-tile:latest tile
