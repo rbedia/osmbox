@@ -1,4 +1,5 @@
-sudo /usr/bin/docker run -d --name osmbox_db \
+sudo /usr/bin/docker run -d --restart always \
+	--name osmbox_db \
 	-e POSTGRES_USER=powerpy \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
