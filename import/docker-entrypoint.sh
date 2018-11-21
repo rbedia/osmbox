@@ -22,5 +22,5 @@ exec /opt/imposm3/imposm3 \
 	-optimize \
 	-deployproduction \
 	-connection "postgis://${POSTGRESQL_USER}:${POSTGRESQL_PASSWORD}@db/${POSTGRESQL_DATABASE}" \
-	-mapping "/etc/imposm/mapping.yml"
+	-mapping "/opt/osmbox/mapping.yml"
 

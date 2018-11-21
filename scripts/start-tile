@@ -1,12 +1,11 @@
 data_dir=/home/rafael/src/osmbox/data
-mkdir -p $data_dir/styles
 sudo /usr/bin/docker run -d --restart always \
     --name osmbox_tile \
     --link osmbox_db:db \
 	-e POSTGRES_USER=powerpy \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
-	-v ${data_dir}/styles:/opt/styles \
+	-v ${data_dir}/osmbox:/opt/osmbox \
 	-p 8112:80 \
 	osmbox-tile:latest
 
