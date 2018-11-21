@@ -1,8 +1,8 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
-ENV SUPERVISOR_VERSION=3.2.0-2 \
-    MAPNIK_VERSION=3.0.9+ds-1 \
-    PYTHON_MAPNIK_VERSION=1:0.0~20151125-92e79d2-1build1
+ENV SUPERVISOR_VERSION=3.3.1-1.1 \
+    MAPNIK_VERSION=3.0.19+ds-1 \
+    PYTHON_MAPNIK_VERSION=1:0.0~20180130-804a7947d-1
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     ca-certificates \
