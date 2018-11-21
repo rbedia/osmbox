@@ -27,7 +27,7 @@ docker run -d --name osmbox_db \
 	osmbox-db:latest
 ```
 
-Put imposm mapping.yml file in the imposm-config directory.
+Put imposm mapping.yml file in the styles directory.
 Put the file to load in the source directory. The file can be a .pbf or a .zip
 file containing an .osm file.
 
@@ -38,7 +38,7 @@ docker run \
 	-e POSTGRESQL_USER=powerpy \
 	-e POSTGRESQL_PASSWORD=randomword \
 	-e POSTGRESQL_DATABASE=powerpy \
-    -v $PWD/imposm-config:/etc/imposm \
+    -v $PWD/styles:/opt/osmbox \
     -v $PWD/source:/var/osm \
 	osmbox-import:latest $@
 ```
@@ -51,7 +51,7 @@ docker run \
 	-e POSTGRES_USER=powerpy \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
-	-v $PWD/styles:/opt/styles \
+	-v $PWD/styles:/opt/osmbox \
 	osmbox-style:latest
 ```
 
@@ -63,7 +63,7 @@ docker run -d \
 	-e POSTGRES_USER=powerpy \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
-	-v $PWD/styles:/opt/styles \
+	-v $PWD/styles:/opt/osmbox \
 	-p 8112:80 \
 	osmbox-tile:latest
 ```
