@@ -52,6 +52,7 @@ docker run \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
 	-v $PWD/styles:/opt/osmbox \
+	-v $PWD/styles-out:/var/osmbox \
 	osmbox-style:latest
 ```
 
@@ -63,7 +64,7 @@ docker run -d \
 	-e POSTGRES_USER=powerpy \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
-	-v $PWD/styles:/opt/osmbox \
+	-v $PWD/styles-out:/var/osmbox \
 	-p 8112:80 \
 	osmbox-tile:latest
 ```

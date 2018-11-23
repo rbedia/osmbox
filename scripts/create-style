@@ -1,9 +1,9 @@
-data_dir=/home/rafael/src/osmbox/data/osmbox
-mkdir -p $data_dir
+data_dir=/home/rafael/src/osmbox/data
 sudo /usr/bin/docker run \
 	-e POSTGRES_USER=powerpy \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
-	-v ${data_dir}:/opt/osmbox \
+	-v ${data_dir}/osmbox:/opt/osmbox \
+	-v ${data_dir}/style:/var/osmbox \
 	osmbox-style:latest
 

@@ -5,7 +5,7 @@ sudo /usr/bin/docker run -d --restart always \
 	-e POSTGRES_USER=powerpy \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
-	-v ${data_dir}/osmbox:/opt/osmbox \
+	-v ${data_dir}/style:/var/osmbox \
 	-p 8112:80 \
 	osmbox-tile:latest
 

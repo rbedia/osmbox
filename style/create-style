@@ -1,4 +1,4 @@
-cd /opt/osmbox
-python /opt/generate_config.py ./layers.yml
-/opt/magnacarto/magnacarto -mml power.mml > power.xml
+rm -rf /var/osmbox/*
+cp -a /opt/osmbox/* /var/osmbox/
+/opt/generate_config.py
 
