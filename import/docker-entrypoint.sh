@@ -15,7 +15,7 @@ then
 	fi
 fi
 
-exec /opt/imposm3/imposm3 \
+exec /opt/imposm/imposm \
 	import \
 	-read "$osm_pbf" \
 	-write \
