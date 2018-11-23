@@ -1,5 +1,12 @@
 # osmbox
-Docker images for creating an OpenStreetMap tile server
+Docker images for creating an OpenStreetMap tile server.
+
+## Components
+
+* osmbox-db - PostgreSQL database server with PostGIS and hstore.
+* osmbox-import - Imports OSM data into PostgreSQL using imposm.
+* osmbox-style - Converts CartoCSS to Mapnik format.
+* osmbox-tile - Runs a tile server using Apache, mod_tile, renderd, and Mapnik.
 
 ## Usage
 
@@ -7,7 +14,6 @@ Create docker images.
 ```
 docker build -t osmbox-db:latest db
 docker build -t osmbox-import:latest import
-docker build -t osmbox-imposm:latest imposm
 docker build -t osmbox-style:latest style
 docker build -t osmbox-tile:latest tile
 ```
