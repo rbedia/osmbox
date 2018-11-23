@@ -1,1 +1,0 @@
-sudo /usr/bin/docker build -t osmbox-imposm:latest imposm

@@ -1,4 +1,0 @@
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-#$DIR/imposm import -config /etc/imposm/config.json -read /var/osm/UnitedStatesPower.pbf -write
-$DIR/imposm import -read /var/osm/PlanetPower.pbf -write
-
