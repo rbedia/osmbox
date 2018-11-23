@@ -2,7 +2,10 @@ areas:
   area_tags: [building]
 tables:
   power_lines:
-    fields:
+    type: linestring
+    mapping:
+      power: ['line', 'minor_line', 'cable']
+    columns:
     - name: osm_id
       type: id
     - name: geometry
@@ -42,12 +45,21 @@ tables:
     - key: ref
       name: ref
       type: string
-    mapping:
-      power: ['line', 'minor_line', 'cable']
-    type: linestring
 
   power_substation:
-    fields:
+    type: geometry
+    type_mappings:
+      points:
+        power:
+        - substation
+        - sub_station
+        - converter
+      polygons:
+        power:
+        - substation
+        - sub_station
+        - converter
+    columns:
     - name: osm_id
       type: id
     - name: geometry
@@ -78,21 +90,17 @@ tables:
       type: string
     - name: type
       type: mapping_value
-    type_mappings:
-      points:
-        power:
-        - substation
-        - sub_station
-        - converter
-      polygons:
-        power:
-        - substation
-        - sub_station
-        - converter
-    type: geometry
 
   power_switchgear:
-    fields:
+    type: point
+    mapping:
+      power:
+        - switch
+        - transformer
+        - compensator
+        - insulator
+        - terminal
+    columns:
     - name: geometry
       type: geometry
     - name: osm_id
@@ -117,17 +125,16 @@ tables:
       type: string
     - name: type
       type: mapping_value
-    mapping:
-      power:
-        - switch
-        - transformer
-        - compensator
-        - insulator
-        - terminal
-    type: point
 
   power_substation_relation:
-    fields:
+    type: relation
+    mapping:
+      power:
+        - substation
+        - sub_station
+        - converter
+    relation_types: [site]
+    columns:
     - name: osm_id
       type: id
     - key: name
@@ -156,16 +163,16 @@ tables:
       type: string
     - name: type
       type: mapping_value
-    mapping:
-      power:
-        - substation
-        - sub_station
-        - converter
-    type: relation
-    relation_types: [site]
 
   power_substation_relation_member:
-    fields:
+    type: relation_member
+    mapping:
+      power:
+      - substation
+      - sub_station
+      - converter
+    relation_types: [site]
+    columns:
     - name: osm_id
       type: id
     - name: member
@@ -188,16 +195,13 @@ tables:
       name: name
       from_member: true
       type: string
-    mapping:
-      power:
-      - substation
-      - sub_station
-      - converter
-    type: relation_member
-    relation_types: [site]
 
   power_plant:
-    fields:
+    type: polygon
+    mapping:
+      power:
+      - plant
+    columns:
     - name: osm_id
       type: id
     - name: geometry
@@ -217,13 +221,14 @@ tables:
     - key: ref
       name: ref
       type: string
+
+  power_plant_relation:
+    type: relation
     mapping:
       power:
       - plant
-    type: polygon
-
-  power_plant_relation:
-    fields:
+    relation_types: [site]
+    columns:
     - name: osm_id
       type: id
     - key: name
@@ -241,28 +246,31 @@ tables:
     - key: ref
       name: ref
       type: string
+
+  power_plant_relation_member:
+    type: relation_member
     mapping:
       power:
       - plant
-    type: relation
     relation_types: [site]
-
-  power_plant_relation_member:
-    fields:
+    columns:
     - name: osm_id
       type: id
     - name: member
       type: member_id
     - name: geometry
       type: geometry
-    mapping:
-      power:
-      - plant
-    type: relation_member
-    relation_types: [site]
 
   power_generator:
-    fields:
+    type: geometry
+    type_mappings:
+      points:
+        power:
+          - generator
+      polygons:
+        power:
+          - generator
+    columns:
     - name: osm_id
       type: id
     - name: geometry
@@ -288,12 +296,4 @@ tables:
     - key: ref
       name: ref
       type: string
-    type_mappings:
-      points:
-        power:
-          - generator
-      polygons:
-        power:
-          - generator
-    type: geometry
 
