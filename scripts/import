@@ -1,10 +1,11 @@
 data_dir=/home/rafael/src/osmbox/data
+style_dir=/home/rafael/src/osmbox/examples/power
 sudo /usr/bin/docker run \
     --link osmbox_db:db \
 	-e POSTGRESQL_USER=powerpy \
 	-e POSTGRESQL_PASSWORD=randomword \
 	-e POSTGRESQL_DATABASE=powerpy \
-    -v $data_dir/osmbox:/opt/osmbox \
-    -v $data_dir/source:/var/osm \
+    -v ${style_dir}:/opt/osmbox \
+    -v ${data_dir}/source:/var/osm \
 	osmbox-import:latest $@
 

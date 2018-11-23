@@ -1,0 +1,299 @@
+areas:
+  area_tags: [building]
+tables:
+  power_lines:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - key: name
+      name: name
+      type: string
+    - name: type
+      type: mapping_value
+    - key: location
+      name: location
+      type: string
+    - key: line
+      name: line
+      type: string
+    - key: voltage
+      name: voltage
+      type: string
+    - key: frequency
+      name: frequency
+      type: string
+    - key: cables
+      name: cables
+      type: integer
+    - key: wires
+      name: wires
+      type: string
+    - key: tunnel
+      name: tunnel
+      type: bool
+    - key: operator
+      name: operator
+      type: string
+    - key: material
+      name: material
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    mapping:
+      power: ['line', 'minor_line', 'cable']
+    type: linestring
+
+  power_substation:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - key: name
+      name: name
+      type: string
+    - key: substation
+      name: substation
+      type: string
+    - key: location
+      name: location
+      type: string
+    - key: voltage
+      name: voltage
+      type: string
+    - key: frequency
+      name: frequency
+      type: string
+    - key: tunnel
+      name: tunnel
+      type: bool
+    - key: operator
+      name: operator
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    - name: type
+      type: mapping_value
+    type_mappings:
+      points:
+        power:
+        - substation
+        - sub_station
+        - converter
+      polygons:
+        power:
+        - substation
+        - sub_station
+        - converter
+    type: geometry
+
+  power_switchgear:
+    fields:
+    - name: geometry
+      type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: voltage
+      name: voltage
+      type: string
+    - key: voltage:primary
+      name: voltage_primary
+      type: string
+    - key: voltage:secondary
+      name: voltage_secondary
+      type: string
+    - key: frequency
+      name: frequency
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    - name: type
+      type: mapping_value
+    mapping:
+      power:
+        - switch
+        - transformer
+        - compensator
+        - insulator
+        - terminal
+    type: point
+
+  power_substation_relation:
+    fields:
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: substation
+      name: substation
+      type: string
+    - key: location
+      name: location
+      type: string
+    - key: voltage
+      name: voltage
+      type: string
+    - key: frequency
+      name: frequency
+      type: string
+    - key: tunnel
+      name: tunnel
+      type: bool
+    - key: operator
+      name: operator
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    - name: type
+      type: mapping_value
+    mapping:
+      power:
+        - substation
+        - sub_station
+        - converter
+    type: relation
+    relation_types: [site]
+
+  power_substation_relation_member:
+    fields:
+    - name: osm_id
+      type: id
+    - name: member
+      type: member_id
+    - name: geometry
+      type: geometry
+    - key: substation
+      name: substation
+      from_member: true
+      type: string
+    - key: operator
+      name: operator
+      from_member: true
+      type: string
+    - key: voltage
+      name: voltage
+      from_member: true
+      type: string
+    - key: name
+      name: name
+      from_member: true
+      type: string
+    mapping:
+      power:
+      - substation
+      - sub_station
+      - converter
+    type: relation_member
+    relation_types: [site]
+
+  power_plant:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - key: name
+      name: name
+      type: string
+    - key: operator
+      name: operator
+      type: string
+    - key: plant:output:electricity
+      name: output
+      type: string
+    - key: plant:source
+      name: source
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    mapping:
+      power:
+      - plant
+    type: polygon
+
+  power_plant_relation:
+    fields:
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: operator
+      name: operator
+      type: string
+    - key: plant:output:electricity
+      name: output
+      type: string
+    - key: plant:source
+      name: source
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    mapping:
+      power:
+      - plant
+    type: relation
+    relation_types: [site]
+
+  power_plant_relation_member:
+    fields:
+    - name: osm_id
+      type: id
+    - name: member
+      type: member_id
+    - name: geometry
+      type: geometry
+    mapping:
+      power:
+      - plant
+    type: relation_member
+    relation_types: [site]
+
+  power_generator:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - key: name
+      name: name
+      type: string
+    - key: operator
+      name: operator
+      type: string
+    - key: generator:source
+      name: source
+      type: string
+    - key: generator:method
+      name: method
+      type: string
+    - key: generator:type
+      name: type
+      type: string
+    - key: generator:output
+      name: output
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    type_mappings:
+      points:
+        power:
+          - generator
+      polygons:
+        power:
+          - generator
+    type: geometry
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Capa_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 296 296"
+   style="enable-background:new 0 0 296 296;"
+   xml:space="preserve"
+   sodipodi:docname="power_plant_wind.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+   id="metadata19"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs17" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1098"
+   id="namedview15"
+   showgrid="false"
+   inkscape:zoom="0.7972973"
+   inkscape:cx="119.15254"
+   inkscape:cy="148"
+   inkscape:window-x="1920"
+   inkscape:window-y="48"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Capa_1" />
+<g
+   id="g12"
+   style="fill:#ff5599;stroke:#000000;stroke-opacity:1;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none">
+	<path
+   d="M140.583,145.609l-12.404,111.749C96.432,261.83,74.334,276.955,74.334,296h8h8h115.334h8h8   c0-19.052-22.114-34.182-53.88-38.647l-12.5-111.714c-2.341,0.557-4.779,0.86-7.288,0.86   C145.445,146.5,142.963,146.186,140.583,145.609z"
+   id="path2"
+   style="fill:#ff5599;stroke:#000000;stroke-opacity:1;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
+	<path
+   d="M162.667,87.307V16c0-8.837-7.163-16-16-16c-8.837,0-16,7.163-16,16v72.502c5-3.16,10.741-5.002,17-5.002   C153.094,83.5,158.667,84.88,162.667,87.307z"
+   id="path4"
+   style="fill:#ff5599;stroke:#000000;stroke-opacity:1;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
+	<path
+   d="M116.5,115c0-1.812,0.162-3.584,0.457-5.313l-57.429,33.156c-7.652,4.418-10.274,14.204-5.856,21.856   c2.964,5.133,8.342,8.003,13.871,8.003c2.715,0,5.466-0.692,7.985-2.146l53.164-30.694C121.281,134.094,116.5,125.098,116.5,115z"
+   id="path6"
+   style="fill:#ff5599;stroke:#000000;stroke-opacity:1;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
+	<path
+   d="M236.472,142.844l-57.429-33.156c0.295,1.729,0.457,3.501,0.457,5.313c0,10.098-4.781,19.094-12.192,24.862l53.164,30.694   c2.52,1.455,5.27,2.146,7.985,2.146c5.529,0,10.907-2.87,13.871-8.003C246.746,157.048,244.124,147.262,236.472,142.844z"
+   id="path8"
+   style="fill:#ff5599;stroke:#000000;stroke-opacity:1;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
+	<circle
+   cx="148"
+   cy="115"
+   r="15.5"
+   id="circle10"
+   style="fill:#ff5599;stroke:#000000;stroke-opacity:1;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
+</g>
+</svg>
