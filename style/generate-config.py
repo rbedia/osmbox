@@ -14,6 +14,7 @@ geometry_field = 'geometry'
 
 tilestache_cache_src = os.environ.get('TILESTACHE_CACHE_SRC', '/opt/osmbox/tilestache_cache.json')
 layers_src = os.environ.get('LAYERS_SRC', '/opt/osmbox/layers.yml')
+renderd_conf_out = os.environ.get('RENDERD_CONF', '/var/osmbox/renderd.conf')
 out_dir = os.environ.get('LAYER_OUT_DIR', '/var/osmbox')
 
 cache_conf = {
@@ -36,6 +37,15 @@ tilestache_conf = {
     'cache': cache_conf,
     'layers': {}
 }
+
+tile_template = """
+[{name}]
+URI=/osm_tiles/{name}/
+XML=/var/osmbox/{name}.xml
+HOST=localhost
+TILESIZE=256
+
+"""
 
 with open(layers_src, 'r') as f:
     config = yaml.load(f)
@@ -101,6 +111,10 @@ for out_layer in config:
             'buffer': 64
         }
     }
+
+with open(renderd_conf_out, 'w') as f:
+    for out_layer in config:
+        f.write(tile_template.format(name=out_layer['name']))
 
 with open(out_dir + '/tilestache.json', 'w') as f:
     json.dump(tilestache_conf, f, sort_keys=True, indent=2)

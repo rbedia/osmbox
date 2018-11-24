@@ -39,16 +39,19 @@ RUN git clone --depth 1 https://github.com/openstreetmap/mod_tile.git \
  && rm -r mod_tile
 
 # Configure mod_tile
-ADD mod_tile.load /etc/apache2/mods-available/
-ADD mod_tile.conf /etc/apache2/mods-available/
+COPY mod_tile.load /etc/apache2/mods-available/
+COPY mod_tile.conf /etc/apache2/mods-available/
 RUN a2enmod mod_tile \
  && install --owner=www-data --group=www-data -d /var/lib/mod_tile
 
 # Configure renderd
-ADD renderd.conf /usr/local/etc/renderd.conf
+COPY renderd.conf /usr/local/etc/renderd.conf
 RUN install --owner=www-data --group=www-data -d /var/run/renderd
 
-ADD supervisord.conf /etc/supervisord.conf
+COPY supervisord.conf /etc/supervisord.conf
+
+COPY start-renderd /opt/
+RUN chmod +x /opt/start-renderd
 
 EXPOSE 80
 CMD ["/usr/bin/supervisord", "--nodaemon", "--configuration=/etc/supervisord.conf"]

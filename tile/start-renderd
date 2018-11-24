@@ -1,0 +1,2 @@
+cat /usr/local/etc/renderd.conf /var/osmbox/renderd.conf > /tmp/renderd.conf
+exec /usr/local/bin/renderd -f -c /tmp/renderd.conf
