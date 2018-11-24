@@ -1,4 +1,4 @@
 rm -rf /var/osmbox/*
 cp -a /opt/osmbox/* /var/osmbox/
-/opt/generate_config.py
+/opt/generate-config.py
 

@@ -11,9 +11,8 @@ RUN curl -L -o /tmp/magnacarto.tar.gz https://download.omniscale.de/magnacarto/r
     mv /opt/magnacarto-* /opt/magnacarto && \
     rm /tmp/magnacarto.tar.gz
 
-COPY generate_config.py /opt/generate_config.py
-COPY create-style /opt/create-style
-RUN chmod +x /opt/create-style /opt/generate_config.py
+COPY create-style generate-config.py /opt/
+RUN chmod +x /opt/create-style /opt/generate-config.py
 
 ENTRYPOINT ["/bin/bash", "/opt/create-style"]
 
