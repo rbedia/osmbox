@@ -1,5 +1,5 @@
 data_dir=/home/rafael/src/osmbox/data
-sudo /usr/bin/docker run -d --restart always \
+/usr/bin/docker run -d --restart always \
     --name osmbox_tile \
     --link osmbox_db:db \
 	-e POSTGRES_USER=powerpy \

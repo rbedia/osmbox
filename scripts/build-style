@@ -1,1 +1,1 @@
-sudo /usr/bin/docker build -t osmbox-style:latest style
+/usr/bin/docker build -t osmbox-style:latest style

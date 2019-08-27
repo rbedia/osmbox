@@ -1,4 +1,4 @@
-sudo /usr/bin/docker run -it --rm \
+/usr/bin/docker run -it --rm \
 	--link osmbox_db:postgres \
 	-e PGPASSWORD=randomword \
 	postgres \

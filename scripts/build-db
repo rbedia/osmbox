@@ -1,1 +1,1 @@
-sudo /usr/bin/docker build -t osmbox-db:latest db
+/usr/bin/docker build -t osmbox-db:latest db

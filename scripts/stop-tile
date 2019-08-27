@@ -1,3 +1,3 @@
-sudo /usr/bin/docker stop osmbox_tile
-sudo /usr/bin/docker rm osmbox_tile
+/usr/bin/docker stop osmbox_tile
+/usr/bin/docker rm osmbox_tile
 

@@ -1,6 +1,6 @@
 data_dir=/home/rafael/src/osmbox/data
 style_dir=/home/rafael/src/osmbox/examples/power
-sudo /usr/bin/docker run \
+/usr/bin/docker run \
 	-e POSTGRES_USER=powerpy \
 	-e POSTGRES_PASSWORD=randomword \
 	-e POSTGRES_DB=powerpy \
