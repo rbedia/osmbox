@@ -91,6 +91,49 @@ tables:
     - name: type
       type: mapping_value
 
+  power_oldstation:
+    type: geometry
+    type_mappings:
+      points:
+        power:
+        - station
+        - sub_station
+      polygons:
+        power:
+        - station
+        - sub_station
+    columns:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - key: name
+      name: name
+      type: string
+    - key: substation
+      name: substation
+      type: string
+    - key: location
+      name: location
+      type: string
+    - key: voltage
+      name: voltage
+      type: string
+    - key: frequency
+      name: frequency
+      type: string
+    - key: tunnel
+      name: tunnel
+      type: bool
+    - key: operator
+      name: operator
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    - name: type
+      type: mapping_value
+
   power_switchgear:
     type: point
     mapping:

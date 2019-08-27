@@ -189,18 +189,6 @@
     }
 }
 
-#power_tower[zoom>14][type="tower"] {
-    marker-file: url('symbols/power_tower.svg');
-    marker-width: 8;
-}
-
-#power_tower[zoom>14][type="pole"] {
-    marker-type: ellipse;
-    marker-fill: @power_pole;
-    marker-line-width: 0;
-    marker-width: 4;
-}
-
 /* Render substations as circles at lower zooms */
 #substation_point[zoom = 8][substation != "transition"][voltage >= 500],
     #substation_point[zoom >= 9][zoom < 11][substation != "transition"][voltage >= 345],
@@ -413,15 +401,6 @@
     shield-size: 9;
     shield-placement: line;
     shield-spacing: 400;
-}
-
-#power_tower::ref[ref != ''][zoom > 15] {
-    text-size: 9;
-    text-name: "[ref]";
-    text-fill: black;
-    text-face-name: @font_face;
-    text-halo-fill: @text_halo;
-    text-halo-radius: 2;
 }
 
 #power_plant::label[zoom >= 9][zoom < 12][output > 100],

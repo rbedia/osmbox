@@ -36,3 +36,29 @@
     - name: power_transformer
       query: "SELECT geometry, name FROM osm_power_switchgear WHERE type = 'transformer'"
       geometry: point
+- name: power_error
+  layers:
+    - name: power_line
+      query: "SELECT geometry, tunnel, location, frequency, type, name, line,
+                      ref, char_length(ref) AS ref_len,
+                      convert_voltage(voltage) / 1000 AS voltage, operator
+              FROM osm_power_lines"
+      geometry: linestring
+    - name: substation_point
+      query: "SELECT ST_Centroid(geometry) AS geometry, name, convert_voltage(voltage) / 1000 AS voltage,
+              substation
+              FROM osm_power_substation
+              WHERE geometry && !bbox!
+              "
+      geometry: point
+    - name: oldstation
+      query: "SELECT geometry, name, convert_voltage(voltage) / 1000 AS voltage, substation, operator
+              FROM osm_power_oldstation"
+      geometry: linestring
+    - name: oldstation_point
+      query: "SELECT ST_Centroid(geometry) AS geometry, name, convert_voltage(voltage) / 1000 AS voltage,
+              substation
+              FROM osm_power_oldstation
+              WHERE geometry && !bbox!
+              "
+      geometry: point
